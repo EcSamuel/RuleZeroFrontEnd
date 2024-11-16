@@ -10,7 +10,7 @@ const AddPlayer = ({ eventId, currentPlayers, setEvents, events, maxPlayers }) =
         currentPlayers: updatedPlayers,
         isFilled: updatedPlayers >= maxPlayers,
       };
-
+      
       await axios.put(`https://664a82eaa300e8795d4227ab.mockapi.io/Event/${eventId}`, updatedEvent);
 
       const updatedEvents = events.map((event) =>
