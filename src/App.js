@@ -11,6 +11,7 @@ import LoginForm from './Components/Login/LoginForm';
 import NavBanner from './NavBanner';
 import Footer from './Footer';
 import NotFound from './404';
+import Profile from './Components/Pages/ProfilePage';
 import CreateAccount from './Components/Login/CreateNewUser';
 
 export function HomePage() {
@@ -34,6 +35,17 @@ export function EventsPage() {
       </div>
     </LayoutWrapper>
   );
+}
+
+export function UserProfile() {
+    return (
+        <LayoutWrapper>
+            <div className='centered-wrapper'>
+                <h1 className='readable-container'>Profile</h1>
+                <Profile />
+            </div>
+        </LayoutWrapper>
+    );
 }
 
 export function GamesPage() {
@@ -66,6 +78,7 @@ function App() {
         <Route path="/games" element={<GamesPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} /> {/* 404 route */}
       </Routes>
       <Footer />
